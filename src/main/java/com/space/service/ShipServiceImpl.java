@@ -196,8 +196,8 @@ public class ShipServiceImpl implements ShipService {
 
             }
 
-            Date before1 = new Date(before + 3600000*24 +1);
-            Date after1 = new Date(after);
+            Date before1 = new Date(before + 3600000*24);
+            Date after1 = new Date(after - 3600000*24);
              Predicate prodDate = criteriaBuilder.between(root.get("prodDate"), after1, before1);
             return prodDate;
         };
